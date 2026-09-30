@@ -1,6 +1,5 @@
 // Discord invite, in one place. Every [data-discord] link uses it; empty hides them all.
-// Torah: Turn It has no Discord yet.
-var DISCORD = "";
+var DISCORD = "https://discord.gg/fBcGPDyCUe";
 (function () {
   document.querySelectorAll("[data-discord]").forEach(function (a) {
     if (!DISCORD) { a.hidden = true; return; }
