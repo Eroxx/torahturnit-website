@@ -99,3 +99,7 @@ footer a { color: var(--faded); margin-right: 18px; }
 @media (max-width: 480px) {
   .shots { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
 }
+
+/* Discord links carry Discord's own mark in its blurple (house rule). */
+.discord{display:inline-flex;align-items:center;gap:6px}
+.discord svg{width:18px;height:18px;flex:none;color:#5865F2}
