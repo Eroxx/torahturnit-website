@@ -24,3 +24,12 @@ var SUPPORT_EMAIL = "support@torahturnit.com";
     });
   });
 })();
+
+// The trope clip plays while it's on screen and rests when it isn't (some
+// browsers skip autoplay; this also saves battery on long scrolls).
+(() => {
+  const v = document.querySelector('.trope-video video');
+  if (!v || !('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.controls = true; return; }
+  new IntersectionObserver(([e]) => { e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { threshold: 0.4 }).observe(v);
+})();
